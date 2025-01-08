@@ -333,7 +333,7 @@ boolean readConfiguration() {
           }
         }
         if(! foundEscape) {
-          for(int m = 0; m < NUM_SPECIAL_MOUSE_CHARACTERS && !foundEscape; m++) {
+          for(int m = 0; m < NUM_SPECIAL_MOUSE_MOVE_CHARACTERS && !foundEscape; m++) {
             if(strcmp(specialMouseMoves[m].key, value) == 0) {
               switches[i].deviceType = MOUSE_MOVE;
               switches[i].xPos = specialMouseMoves[m].xDelta;
@@ -384,7 +384,7 @@ boolean readConfiguration() {
             }
           }
           if(! foundEscape) {
-            for(int m = 0; m < NUM_SPECIAL_MOUSE_CHARACTERS && !foundEscape; m++) {
+            for(int m = 0; m < NUM_SPECIAL_MOUSE_MOVE_CHARACTERS && !foundEscape; m++) {
               if(strcmp(specialMouseMoves[m].key, value) == 0) {
                 encoders[i].deviceTypeLeft = MOUSE_MOVE;
                 encoders[i].xPosLeft = specialMouseMoves[m].xDelta;
@@ -436,7 +436,7 @@ boolean readConfiguration() {
             }
           }
           if(! foundEscape) {
-            for(int m = 0; m < NUM_SPECIAL_MOUSE_CHARACTERS && !foundEscape; m++) {
+            for(int m = 0; m < NUM_SPECIAL_MOUSE_MOVE_CHARACTERS && !foundEscape; m++) {
               if(strcmp(specialMouseMoves[m].key, value) == 0) {
                 encoders[i].deviceTypeRight = MOUSE_MOVE;
                 encoders[i].xPosRight = specialMouseMoves[m].xDelta;
@@ -511,7 +511,7 @@ void setup() {
   //   encoders[i].oldValue = digitalRead(encoders[i].pin1);
   //   pinMode(encoders[i].pin2, INPUT);
   // }
-  if (!SD.begin(4)) {
+  if (!SD.begin(BUILTIN_SDCARD)) {
     Serial.println("Error reading SD card. Using default configuration v12");
   } else {
     Serial.println("SD card found. Using configuration");
@@ -620,3 +620,4 @@ void loop() {
     }
   }
 }
+
