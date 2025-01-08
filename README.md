@@ -18,6 +18,11 @@ Every part of this project is open source, including:
 
 The SVG Keyboard was designed to provide a physical interface for quickly altering shapes without the distractions of a traditional keyboard or mouse.
 
+
+
+https://github.com/user-attachments/assets/6bbcc28e-a6bd-4fad-a9b8-0a243eec3b54
+
+
 ---
 
 ## How do you use it?
